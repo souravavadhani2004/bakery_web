@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Sweet Treats Bakery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .checkout-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #8e5b3a;
+            text-align: center;
+        }
+        .order-summary, .customer-info, .payment-methods {
+            margin-bottom: 20px;
+        }
+        .order-summary h2, .customer-info h2, .payment-methods h2 {
+            color: #8e5b3a;
+            border-bottom: 2px solid #f0e4db;
+            padding-bottom: 5px;
+        }
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e4db;
+        }
+        .order-summary-item:last-child {
+            border-bottom: none;
+        }
+        .customer-info input, .payment-methods select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: right;
+            margin-top: 10px;
+            color: #333333;
+        }
+        .place-order {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #8e5b3a;
+            color: #ffffff;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .place-order:hover {
+            background-color: #71482d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-summary-item">
+                <span>Chocolate Cake</span>
+                <span>$10.99</span>
+            </div>
+            <div class="order-summary-item">
+                <span>Butter Croissant</span>
+                <span>$2.99</span>
+            </div>
+            <div class="order-summary-item">
+                <span>Vanilla Cupcake</span>
+                <span>$3.50</span>
+            </div>
+            <!-- Total Amount -->
+            <div class="total">Total: $17.48</div>
+        </div>
+
+        <!-- Customer Information -->
+        <div class="customer-info">
+            <h2>Customer Information</h2>
+            <form action="submit_order.html" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="address" placeholder="Shipping Address" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+            </form>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <h2>Payment Method</h2>
+            <select name="payment" form="checkout-form" required>
+                <option value="" disabled selected>Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash-on-delivery">Cash on Delivery</option>
+            </select>
+        </div>
+
+        <!-- Place Order Button -->
+        <button class="place-order" type="submit" form="checkout-form">Place Order</button>
+    </div>
+
+</body>
+</html>

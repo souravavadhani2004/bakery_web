@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - Sweet Treats Bakery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .billing-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #8e5b3a;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .submit-button {
+            padding: 12px;
+            background-color: #8e5b3a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #71482d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="billing-container">
+        <h1>Billing Information</h1>
+        <form action="{{ url_for('billing') }}" method="POST">
+            <input type="text" name="card-name" placeholder="Name on Card" required>
+            <input type="text" name="card-number" placeholder="Card Number" required maxlength="16">
+            <input type="text" name="expiry-date" placeholder="Expiry Date (MM/YY)" required maxlength="5">
+            <input type="text" name="cvv" placeholder="CVV" required maxlength="3">
+            <input type="text" name="billing-address" placeholder="Billing Address" required>
+            <button type="submit" class="submit-button">Confirm Payment</button>
+        </form>
+    </div>
+
+</body>
+</html>

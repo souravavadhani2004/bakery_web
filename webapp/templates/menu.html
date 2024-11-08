@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #8e5b3a;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+        }
+        .menu-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .menu-content {
+            padding: 15px;
+        }
+        .menu-content h3 {
+            margin: 10px 0 5px;
+            font-size: 1.25em;
+            color: #8e5b3a;
+        }
+        .menu-content p {
+            font-size: 0.9em;
+            color: #666666;
+            margin: 5px 0;
+        }
+        .menu-content .price {
+            font-size: 1em;
+            color: #333333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .order-button {
+            padding: 8px 12px;
+            background-color: #8e5b3a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: #71482d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bakery Menu</h1>
+    <div class="menu-container">
+        <!-- Menu Item 1 -->
+        <form class="menu-item" action="{{ url_for('billing') }}" method="POST">
+            <input type="hidden" name="item-name" value="Chocolate Cake">
+            <input type="hidden" name="item-price" value="10.99">
+            <input type="hidden" name="item-image" value="https://www.recipetineats.com/tachyon/2018/03/Chocolate-Cake_9-SQ.jpg">
+            <img src="https://www.recipetineats.com/tachyon/2018/03/Chocolate-Cake_9-SQ.jpg" alt="Chocolate Cake">
+            <div class="menu-content">
+                <h3>Chocolate Cake</h3>
+                <p>Rich and moist chocolate cake topped with creamy frosting.</p>
+                <p class="price">$10.99</p>
+                <button type="submit" class="order-button">Order</button>
+            </div>
+        </form>
+
+        <!-- Menu Item 2 -->
+        <form class="menu-item" action="{{ url_for('billing') }}" method="POST">
+            <input type="hidden" name="item-name" value="Chocolate Croissant">
+            <input type="hidden" name="item-price" value="2.99">
+            <input type="hidden" name="item-image" value="https://ruokala.sg/cdn/shop/articles/ruokala-gourmet-chocolate-croissants.jpg?v=1707194100&width=1500">
+            <img src="https://ruokala.sg/cdn/shop/articles/ruokala-gourmet-chocolate-croissants.jpg?v=1707194100&width=1500" alt="Chocolate Croissant">
+            <div class="menu-content">
+                <h3>Chocolate Croissant</h3>
+                <p>Flaky, buttery croissant perfect for breakfast or a snack.</p>
+                <p class="price">$2.99</p>
+                <button type="submit" class="order-button">Order</button>
+            </div>
+        </form>
+
+        <!-- Menu Item 3 -->
+        <form class="menu-item" action="{{ url_for('billing') }}" method="POST">
+            <input type="hidden" name="item-name" value="Blueberry Cupcake">
+            <input type="hidden" name="item-price" value="3.50">
+            <input type="hidden" name="item-image" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnrp8jVJN6DS4KvwEw5Dxp6THSNJOckONuJg&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnrp8jVJN6DS4KvwEw5Dxp6THSNJOckONuJg&s" alt="Blueberry Cupcake">
+            <div class="menu-content">
+                <h3>Blueberry Cupcake</h3>
+                <p>Delicious vanilla cupcake topped with sweet vanilla icing.</p>
+                <p class="price">$3.50</p>
+                <button type="submit" class="order-button">Order</button>
+            </div>
+        </form>
+
+        <!-- Menu Item 4 -->
+        <form class="menu-item" action="{{ url_for('billing') }}" method="POST">
+            <input type="hidden" name="item-name" value="Brownie-Cookie-Bars">
+            <input type="hidden" name="item-price" value="3.99">
+            <input type="hidden" name="item-image" value="https://crayonsandcravings.com/wp-content/uploads/2022/07/Brownie-Cookie-Bars.jpg">
+            <img src="https://crayonsandcravings.com/wp-content/uploads/2022/07/Brownie-Cookie-Bars.jpg" alt="Brownie-Cookie-Bars">
+            <div class="menu-content">
+                <h3>Brownie-Cookie-Bars</h3>
+                <p>Delicious Brownie-Cookie-Bars</p>
+                <p class="price">$3.99</p>
+                <button type="submit" class="order-button">Order</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
